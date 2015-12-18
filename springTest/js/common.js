@@ -96,10 +96,17 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $("#canvas").attr({ height: '600px'} );
-    $("#canvas").attr({ width: $("#wrapper").width()} );
+    $("#canvas").attr({ height: '600'} );
+    $("#canvas").attr({ width:  document.getElementById("wrapper").style.width} );
   };
   sizing();
+  setInterval(function(){
+    var canvasWidth = document.getElementById("canvas").style.width;
+    var windowWidth = document.getElementById("wrapper").style.width;
+    if(canvasWidth !== windowWidth){
+      sizing();
+    }
+  }, 1000);
   $(window).resize(function() {
     sizing();
   });
