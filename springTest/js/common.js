@@ -103,6 +103,8 @@ $(function () {
   setInterval(function(){
     var canvasWidth = document.getElementById("canvas").style.width;
     var windowWidth = document.getElementById("wrapper").style.width;
+    console.log(canvasWidth);
+    console.log(windowWidth);
     if(canvasWidth !== windowWidth){
       sizing();
     }
