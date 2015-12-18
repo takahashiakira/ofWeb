@@ -96,7 +96,7 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $("#canvas").attr({height:$("#wrapper").height()});
+    $("#canvas").attr({height: '600px'});
     $("#canvas").attr({width:$("#wrapper").width()});
   };
   sizing();
