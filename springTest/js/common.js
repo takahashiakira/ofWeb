@@ -96,8 +96,8 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $('#canvas').get( 0 ).width = $( window ).width();
-    $('#canvas').get( 0 ).height = $( window ).height();
+    $("#canvas").attr({height:$("#wrapper").height()});
+    $("#canvas").attr({width:$("#wrapper").width()});
   };
   sizing();
   $(window).resize(function() {
