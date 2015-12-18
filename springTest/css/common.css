@@ -1,28 +1,30 @@
 body {
   font-family: helvetica, sans-serif;
   margin: 0;
-  background-color: #000;
-  color: #fff;
   padding: none;
   position: relative;
 }
 #wrapper{
 	width: 100%;
-	height: 100%;
-	position: fixed;
+	height: 600px;
+	position: absolute;
   top: 0;
   left: 0;
+  background-color: #000;
+  color: #fff;
 }
 
 .loadingView {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  margin: 0px auto;
+  height: 600px;
+  margin: 0 auto;
   text-align: center;
   background: rgba(0, 0, 0, 0);
+  color: #fff;
+  z-index: 1;
 }
 
 .emscripten {
@@ -73,6 +75,12 @@ canvas.emscripten {
 @keyframes rotation {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+}
+
+.main {
+  position: absolute;
+  top: 600px;
+  padding: 20px;
 }
 
 #status {
