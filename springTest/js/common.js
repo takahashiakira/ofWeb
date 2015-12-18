@@ -96,17 +96,17 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
+    var HEIGHT = 600;
     var $canvas = $("#canvas");
-    var width = $("#wrapper").width();
-    $canvas.attr({ height: '600' });
+    var windowWidth = $("#wrapper").width();
+    $canvas.attr({ height: HEIGHT });
     $canvas.attr({ width: $("#wrapper").width() });
-    console.log(width);
+    console.log(windowWidth);
   };
   sizing();
   setInterval(function(){
-    var width = $("#wrapper").width();
+    var windowWidth = $("#wrapper").width();
     var canvasWidth = document.getElementById("canvas").width;
-    var windowWidth = width;
     if(canvasWidth !== windowWidth){
       sizing();
     }
