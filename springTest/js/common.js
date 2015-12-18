@@ -96,25 +96,11 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $("#canvas").attr({height:$("#wrapper").height()});
-    $("#canvas").attr({width:$("#wrapper").width()});
-  };
-  var draw = function() {
-  	var canvas = document.getElementById("canvas");
-  	var ctx = canvas.getContext('2d');
-
-  	ctx.beginPath();
-  	ctx.moveTo(20, 20);
-  	ctx.lineTo(120, 20);
-  	ctx.lineTo(120, 120);
-  	ctx.lineTo(20, 120);
-  	ctx.closePath();
-  	ctx.stroke();
+    $('#canvas').get( 0 ).width = $( window ).width();
+    $('#canvas').get( 0 ).height = $( window ).height();
   };
   sizing();
-  draw();
   $(window).resize(function() {
     sizing();
-    draw();
   });
 });
