@@ -98,9 +98,23 @@ $(function () {
   var sizing = function() {
     $("#canvas").attr({height:$("#wrapper").height()});
     $("#canvas").attr({width:$("#wrapper").width()});
-  }
+  };
+  var draw = function() {
+  	var canvas = document.getElementById("canvas");
+  	var ctx = canvas.getContext('2d');
+
+  	ctx.beginPath();
+  	ctx.moveTo(20, 20);
+  	ctx.lineTo(120, 20);
+  	ctx.lineTo(120, 120);
+  	ctx.lineTo(20, 120);
+  	ctx.closePath();
+  	ctx.stroke();
+  };
   sizing();
+  draw();
   $(window).resize(function() {
     sizing();
+    draw();
   });
 });
