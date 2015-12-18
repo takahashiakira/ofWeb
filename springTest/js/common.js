@@ -96,19 +96,19 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $("#canvas").attr({ height: '600'} );
-    $("#canvas").attr({ width:  document.getElementById("wrapper").style.width} );
+    $("#canvas").attr({ height: '600' });
+    $("#canvas").attr({ width: $("#wrapper").width() });
   };
   sizing();
   setInterval(function(){
-    var canvasWidth = document.getElementById("canvas").style.width;
-    var windowWidth = document.getElementById("wrapper").style.width;
+    var canvasWidth = document.getElementById("canvas").width;
+    var windowWidth = $("#wrapper").width();
     console.log(canvasWidth);
     console.log(windowWidth);
     if(canvasWidth !== windowWidth){
       sizing();
     }
-  }, 1000);
+  }, 500);
   $(window).resize(function() {
     sizing();
   });
