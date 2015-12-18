@@ -96,19 +96,21 @@ document.body.appendChild(script);
 
 $(function () {
   var sizing = function() {
-    $("#canvas").attr({ height: '600' });
-    $("#canvas").attr({ width: $("#wrapper").width() });
+    var $canvas = $("#canvas");
+    var width = $("#wrapper").width();
+    $canvas.attr({ height: '600' });
+    $canvas.attr({ width: $("#wrapper").width() });
+    console.log(width);
   };
   sizing();
   setInterval(function(){
+    var width = $("#wrapper").width();
     var canvasWidth = document.getElementById("canvas").width;
-    var windowWidth = $("#wrapper").width();
-    console.log(canvasWidth);
-    console.log(windowWidth);
+    var windowWidth = width;
     if(canvasWidth !== windowWidth){
       sizing();
     }
-  }, 500);
+  }, 100);
   $(window).resize(function() {
     sizing();
   });
